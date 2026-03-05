@@ -1,0 +1,15 @@
+html {
+  overflow-y: scroll; /* add a space for the scrollbar */
+}
+body {
+  background-color: grey;
+  margin: 0;
+  padding: 0;
+  width:100%
+  /* background-color:#3FAE2A;
+    background-color:#a4c639 ; */
+
+}
+.question {
+  cursor: pointer;
+}
