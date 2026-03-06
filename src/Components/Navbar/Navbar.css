@@ -1,17 +1,20 @@
-
 #nabvar {
-  position:sticky;
-  top:0;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 0.2rem 1rem;
   background-color: #a4c639;
   font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 /* logo */
 #navbarLogo a {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: end;
   text-decoration: none;
@@ -31,10 +34,12 @@
 #navbarLinks {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1.5em;
 }
 #navbarList {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   list-style: none;
   gap: 1em;
@@ -52,5 +57,3 @@
 #navbarLinks #CNAS {
   max-width: 3.1em;
 }
-
-/* when the screen is really small way too small the color on the navbar onli cover half its width */

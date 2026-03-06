@@ -1,0 +1,32 @@
+#sidebar {
+  background-color: #a4c639;
+  display: inline-block;
+  font-size: 0.95rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  position: fixed;
+  top: 3.9em;
+  left: 0;
+  height: calc(100vh - 3.9em);
+}
+#sidebarList {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  list-style: none;
+  gap: 1em;
+  color: white;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+#sidebarList a {
+  color: white;
+  text-decoration: none;
+}
+#sidebarList a:hover {
+  text-decoration: underline;
+}
+#sidebarList a.active {
+  color: rgb(29, 121, 226);
+  text-decoration: none;
+}
