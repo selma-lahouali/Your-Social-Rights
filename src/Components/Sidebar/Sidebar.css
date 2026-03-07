@@ -1,5 +1,5 @@
 #sidebar {
-  background-color: #a4c639;
+  background-color: var(--lightGreen);
   display: inline-block;
   font-size: 0.95rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -27,6 +27,6 @@
   text-decoration: underline;
 }
 #sidebarList a.active {
-  color: rgb(29, 121, 226);
+  color: var(--blue);
   text-decoration: none;
 }

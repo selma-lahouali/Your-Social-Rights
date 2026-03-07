@@ -1,3 +1,8 @@
+:root {
+  --blue: rgb(29, 121, 226);
+  --lightGreen: #a4c639;
+  --darkGreen: #3fae2a;
+}
 html {
   overflow-y: scroll; /* add a space for the scrollbar */
 }
@@ -5,9 +10,6 @@ body {
   background-color: rgb(185, 182, 182);
   margin: 0;
   padding: 0;
-
-  /* background-color:#3FAE2A;
-    background-color:#a4c639 ; */
 }
 .container {
   margin-left: 15rem;
@@ -22,4 +24,3 @@ body {
 .question.open {
   max-height: 300rem;
 }
-
