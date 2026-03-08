@@ -11,16 +11,34 @@ body {
   margin: 0;
   padding: 0;
 }
+/* page content */
 .container {
   margin-left: 15rem;
+  font-size: 1rem;
+}
+.main-title {
+  font-size: 1.6em;
+}
+.dropdown-arrows {
+  font-size: 0.8em;
+  padding-left: 0.3em;
 }
 .question {
+  font-size: 1.2em;
   cursor: pointer;
-}
-.question {
   max-height: 1rem;
   transition: max-height 0.2s linear;
 }
 .question.open {
   max-height: 300rem;
+}
+/* answers */
+.container span {
+  font-weight: bold;
+}
+.step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  font-size:1.1em
 }
