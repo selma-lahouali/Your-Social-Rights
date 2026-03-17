@@ -19,9 +19,9 @@ export default function WorkAccident() {
   const [question16, setQuestion16] = useState(false);
   return (
     <div className="container">
-      <div>
-        <h2 className="main-title">Assurance maladie (CNAS)</h2>
-        {/* 1st question */}
+      <h2 className="main-title">Assurance maladie (CNAS)</h2>
+      {/* 1st question */}
+      <div className="section">
         <h3
           className={`question ${question1 ? "open" : ""}`}
           onClick={() => setQuestion1(!question1)}
@@ -31,7 +31,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question1 ? "▲" : "▼"}</span>
         </h3>
         {question1 && (
-          <div>
+          <div className="answer">
             <p>
               Oui. Si vous remplissez les conditions d’ouverture des droits,
               vous pouvez bénéficier de deux types de prestations :
@@ -51,7 +51,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 2nd question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question2 ? "open" : ""}`}
           onClick={() => setQuestion2(!question2)}
@@ -60,7 +60,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question2 ? "▲" : "▼"}</span>
         </h3>
         {question2 && (
-          <div>
+          <div className="answer">
             <p>
               Si vous êtes assuré, vous pouvez bénéficier de la prise en charge
               de plusieurs types de frais, notamment :
@@ -89,7 +89,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 3rd question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question3 ? "open" : ""}`}
           onClick={() => setQuestion3(!question3)}
@@ -100,7 +100,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question3 ? "▲" : "▼"}</span>
         </h3>
         {question3 && (
-          <div>
+          <div className="answer">
             <p>
               Oui. Si vous êtes convoqué pour un contrôle médical ou si votre
               traitement doit être effectué dans un établissement situé hors de
@@ -111,7 +111,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 4th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question4 ? "open" : ""}`}
           onClick={() => setQuestion4(!question4)}
@@ -121,7 +121,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question4 ? "▲" : "▼"}</span>
         </h3>
         {question4 && (
-          <div>
+          <div className="answer">
             <p>
               Non. Pour que vous puissiez bénéficier des prestations de
               l’assurance maladie, les soins doivent être prescrits par un
@@ -132,7 +132,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 5th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question5 ? "open" : ""}`}
           onClick={() => setQuestion5(!question5)}
@@ -142,7 +142,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question5 ? "▲" : "▼"}</span>
         </h3>
         {question5 && (
-          <div>
+          <div className="answer">
             <p>
               Non. Les prothèses dentaires ne sont prises en charge que
               lorsqu’elles ont un objectif
@@ -154,7 +154,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 6th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question6 ? "open" : ""}`}
           onClick={() => setQuestion6(!question6)}
@@ -164,7 +164,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question6 ? "▲" : "▼"}</span>
         </h3>
         {question6 && (
-          <div>
+          <div className="answer">
             <p>
               Non. Si vous remplissez les conditions d’ouverture des droits au
               moment des soins, vous pouvez bénéficier des prestations en nature
@@ -174,16 +174,17 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 7th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question7 ? "open" : ""}`}
           onClick={() => setQuestion7(!question7)}
         >
           Dans quel délai dois-je transmettre mon dossier médical à la sécurité
-          sociale ?<span className="dropdown-arrows">{question7 ? "▲" : "▼"}</span>
+          sociale ?
+          <span className="dropdown-arrows">{question7 ? "▲" : "▼"}</span>
         </h3>
         {question7 && (
-          <div>
+          <div className="answer">
             <p>
               Vous devez présenter votre dossier médical dans un délai de
               <span>trois mois après le premier acte médical</span> .
@@ -200,7 +201,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 8th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question8 ? "open" : ""}`}
           onClick={() => setQuestion8(!question8)}
@@ -210,7 +211,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question8 ? "▲" : "▼"}</span>
         </h3>
         {question8 && (
-          <div>
+          <div className="answer">
             <p>
               Oui. Si votre incapacité de travail est médicalement constatée,
               vous pouvez percevoir une indemnité journalière :
@@ -239,7 +240,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 9th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question9 ? "open" : ""}`}
           onClick={() => setQuestion9(!question9)}
@@ -248,7 +249,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question9 ? "▲" : "▼"}</span>
         </h3>
         {question9 && (
-          <div>
+          <div className="answer">
             <p>
               L’indemnité est versée pour chaque jour d’arrêt de travail et elle
               ne peut pas dépasser
@@ -262,7 +263,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 10th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question10 ? "open" : ""}`}
           onClick={() => setQuestion10(!question10)}
@@ -271,7 +272,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question10 ? "▲" : "▼"}</span>
         </h3>
         {question10 && (
-          <div>
+          <div className="answer">
             <p>
               Vous pouvez percevoir l’indemnité pendant une durée maximale de
               <span>trois ans</span> :
@@ -293,7 +294,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 11th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question11 ? "open" : ""}`}
           onClick={() => setQuestion11(!question11)}
@@ -303,7 +304,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question11 ? "▲" : "▼"}</span>
         </h3>
         {question11 && (
-          <div>
+          <div className="answer">
             <p>
               Oui. Si la reprise du travail favorise l’amélioration de votre
               état de santé ou si vous suivez une rééducation ou une
@@ -318,7 +319,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 12th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question12 ? "open" : ""}`}
           onClick={() => setQuestion12(!question12)}
@@ -328,7 +329,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question12 ? "▲" : "▼"}</span>
         </h3>
         {question12 && (
-          <div>
+          <div className="answer">
             <p>
               Oui. Vous devez déclarer votre maladie dans le délai prévu par la
               réglementation. Si cette déclaration n’est pas faite, vous pouvez
@@ -339,7 +340,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 13th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question13 ? "open" : ""}`}
           onClick={() => setQuestion13(!question13)}
@@ -349,7 +350,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question13 ? "▲" : "▼"}</span>
         </h3>
         {question13 && (
-          <div>
+          <div className="answer">
             <p>
               Oui. Si votre maladie dure longtemps ou nécessite des soins
               continus pendant plus de six mois, vous devez vous soumettre aux
@@ -366,7 +367,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 14th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question14 ? "open" : ""}`}
           onClick={() => setQuestion14(!question14)}
@@ -376,7 +377,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question14 ? "▲" : "▼"}</span>
         </h3>
         {question14 && (
-          <div>
+          <div className="answer">
             <p>
               Vous devez vous référer à la liste officielle des affections de
               longue durée fixée par voie réglementaire par les autorités
@@ -386,7 +387,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 15th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question15 ? "open" : ""}`}
           onClick={() => setQuestion15(!question15)}
@@ -396,7 +397,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question15 ? "▲" : "▼"}</span>
         </h3>
         {question15 && (
-          <div>
+          <div className="answer">
             <p>
               Oui. Votre indemnité journalière peut être revalorisée en fonction
               de l’évolution de votre salaire de poste.
@@ -406,7 +407,7 @@ export default function WorkAccident() {
         )}
       </div>
       {/* 16th question */}
-      <div>
+      <div className="section">
         <h3
           className={`question ${question16 ? "open" : ""}`}
           onClick={() => setQuestion16(!question16)}
@@ -416,7 +417,7 @@ export default function WorkAccident() {
           <span className="dropdown-arrows">{question16 ? "▲" : "▼"}</span>
         </h3>
         {question16 && (
-          <div>
+          <div className="answer">
             <p>
               Oui. Lorsque l’indemnité est versée au taux de 100 %, son montant
               ne peut pas être inférieur à
