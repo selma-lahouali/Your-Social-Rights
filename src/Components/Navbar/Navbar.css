@@ -1,12 +1,14 @@
-#navbar {
+#navbarPosition {
   position: sticky;
   top: 0;
+}
+#navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   padding: 0.2rem 1rem;
-  background-color:var(--lightGreen);
+  background-color: var(--lightGreen);
   font-size: 1rem;
   width: 100%;
   box-sizing: border-box;

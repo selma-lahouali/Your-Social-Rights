@@ -1,36 +1,28 @@
 import { useState } from "react";
 
 export default function WorkAccident() {
-  const [question1, setQuestion1] = useState(false);
-  const [question2, setQuestion2] = useState(false);
-  const [question3, setQuestion3] = useState(false);
-  const [question4, setQuestion4] = useState(false);
-  const [question5, setQuestion5] = useState(false);
-  const [question6, setQuestion6] = useState(false);
-  const [question7, setQuestion7] = useState(false);
-  const [question8, setQuestion8] = useState(false);
-  const [question9, setQuestion9] = useState(false);
-  const [question10, setQuestion10] = useState(false);
-  const [question11, setQuestion11] = useState(false);
-  const [question12, setQuestion12] = useState(false);
-  const [question13, setQuestion13] = useState(false);
-  const [question14, setQuestion14] = useState(false);
-  const [question15, setQuestion15] = useState(false);
-  const [question16, setQuestion16] = useState(false);
+  const [openQuestion, setOpenQuestion] = useState({});
+  const toggleQuestion = (key) => {
+    setOpenQuestion((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
   return (
     <div className="container">
       <h2 className="main-title">Assurance maladie (CNAS)</h2>
       {/* 1st question */}
       <div className="section">
         <h3
-          className={`question ${question1 ? "open" : ""}`}
-          onClick={() => setQuestion1(!question1)}
+          className={`question ${openQuestion[1] ? "open" : ""}`}
+          onClick={() => toggleQuestion(1)}
         >
           Si je tombe malade, est-ce que je peux bénéficier de prestations de
           l’assurance maladie ?
-          <span className="dropdown-arrows">{question1 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[1] ? "▲" : "▼"}</span>
         </h3>
-        {question1 && (
+        {openQuestion[1] && (
           <div className="answer">
             <p>
               Oui. Si vous remplissez les conditions d’ouverture des droits,
@@ -53,13 +45,13 @@ export default function WorkAccident() {
       {/* 2nd question */}
       <div className="section">
         <h3
-          className={`question ${question2 ? "open" : ""}`}
-          onClick={() => setQuestion2(!question2)}
+          className={`question ${openQuestion[2] ? "open" : ""}`}
+          onClick={() => toggleQuestion(2)}
         >
           Quels types de soins peuvent être pris en charge si je suis malade ?
-          <span className="dropdown-arrows">{question2 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[2] ? "▲" : "▼"}</span>
         </h3>
-        {question2 && (
+        {openQuestion[2] && (
           <div className="answer">
             <p>
               Si vous êtes assuré, vous pouvez bénéficier de la prise en charge
@@ -91,15 +83,15 @@ export default function WorkAccident() {
       {/* 3rd question */}
       <div className="section">
         <h3
-          className={`question ${question3 ? "open" : ""}`}
-          onClick={() => setQuestion3(!question3)}
+          className={`question ${openQuestion[3] ? "open" : ""}`}
+          onClick={() => toggleQuestion(3)}
         >
           Si je dois me déplacer pour un contrôle médical demandé par la
           sécurité sociale, est- ce que mes frais de déplacement peuvent être
           remboursés ?
-          <span className="dropdown-arrows">{question3 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[3] ? "▲" : "▼"}</span>
         </h3>
-        {question3 && (
+        {openQuestion[3] && (
           <div className="answer">
             <p>
               Oui. Si vous êtes convoqué pour un contrôle médical ou si votre
@@ -113,14 +105,14 @@ export default function WorkAccident() {
       {/* 4th question */}
       <div className="section">
         <h3
-          className={`question ${question4 ? "open" : ""}`}
-          onClick={() => setQuestion4(!question4)}
+          className={`question ${openQuestion[4] ? "open" : ""}`}
+          onClick={() => toggleQuestion(4)}
         >
           Si je reçois des soins sans prescription médicale, est-ce que je peux
           quand même être remboursé ?
-          <span className="dropdown-arrows">{question4 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[4] ? "▲" : "▼"}</span>
         </h3>
-        {question4 && (
+        {openQuestion[4] && (
           <div className="answer">
             <p>
               Non. Pour que vous puissiez bénéficier des prestations de
@@ -134,14 +126,14 @@ export default function WorkAccident() {
       {/* 5th question */}
       <div className="section">
         <h3
-          className={`question ${question5 ? "open" : ""}`}
-          onClick={() => setQuestion5(!question5)}
+          className={`question ${openQuestion[5] ? "open" : ""}`}
+          onClick={() => toggleQuestion(5)}
         >
           Si j’ai besoin d’une prothèse dentaire, est-ce qu’elle sera toujours
           prise en charge ?
-          <span className="dropdown-arrows">{question5 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[5] ? "▲" : "▼"}</span>
         </h3>
-        {question5 && (
+        {openQuestion[5] && (
           <div className="answer">
             <p>
               Non. Les prothèses dentaires ne sont prises en charge que
@@ -156,14 +148,14 @@ export default function WorkAccident() {
       {/* 6th question */}
       <div className="section">
         <h3
-          className={`question ${question6 ? "open" : ""}`}
-          onClick={() => setQuestion6(!question6)}
+          className={`question ${openQuestion[6] ? "open" : ""}`}
+          onClick={() => toggleQuestion(6)}
         >
           Si mon traitement dure longtemps, est-ce que la prise en charge des
           soins a une durée limitée ?
-          <span className="dropdown-arrows">{question6 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[6] ? "▲" : "▼"}</span>
         </h3>
-        {question6 && (
+        {openQuestion[6] && (
           <div className="answer">
             <p>
               Non. Si vous remplissez les conditions d’ouverture des droits au
@@ -176,14 +168,14 @@ export default function WorkAccident() {
       {/* 7th question */}
       <div className="section">
         <h3
-          className={`question ${question7 ? "open" : ""}`}
-          onClick={() => setQuestion7(!question7)}
+          className={`question ${openQuestion[7] ? "open" : ""}`}
+          onClick={() => toggleQuestion(7)}
         >
           Dans quel délai dois-je transmettre mon dossier médical à la sécurité
           sociale ?
-          <span className="dropdown-arrows">{question7 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[7] ? "▲" : "▼"}</span>
         </h3>
-        {question7 && (
+        {openQuestion[7] && (
           <div className="answer">
             <p>
               Vous devez présenter votre dossier médical dans un délai de
@@ -203,14 +195,14 @@ export default function WorkAccident() {
       {/* 8th question */}
       <div className="section">
         <h3
-          className={`question ${question8 ? "open" : ""}`}
-          onClick={() => setQuestion8(!question8)}
+          className={`question ${openQuestion[8] ? "open" : ""}`}
+          onClick={() => toggleQuestion(8)}
         >
           Si je suis en arrêt maladie et que je ne peux pas travailler, est-ce
           que je reçois une indemnité ?
-          <span className="dropdown-arrows">{question8 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[8] ? "▲" : "▼"}</span>
         </h3>
-        {question8 && (
+        {openQuestion[8] && (
           <div className="answer">
             <p>
               Oui. Si votre incapacité de travail est médicalement constatée,
@@ -242,13 +234,13 @@ export default function WorkAccident() {
       {/* 9th question */}
       <div className="section">
         <h3
-          className={`question ${question9 ? "open" : ""}`}
-          onClick={() => setQuestion9(!question9)}
+          className={`question ${openQuestion[9] ? "open" : ""}`}
+          onClick={() => toggleQuestion(9)}
         >
           Comment est calculée l’indemnité journalière que je peux recevoir ?
-          <span className="dropdown-arrows">{question9 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[9] ? "▲" : "▼"}</span>
         </h3>
-        {question9 && (
+        {openQuestion[9] && (
           <div className="answer">
             <p>
               L’indemnité est versée pour chaque jour d’arrêt de travail et elle
@@ -265,13 +257,13 @@ export default function WorkAccident() {
       {/* 10th question */}
       <div className="section">
         <h3
-          className={`question ${question10 ? "open" : ""}`}
-          onClick={() => setQuestion10(!question10)}
+          className={`question ${openQuestion[10] ? "open" : ""}`}
+          onClick={() => toggleQuestion(10)}
         >
           Pendant combien de temps puis-je recevoir l’indemnité journalière ?
-          <span className="dropdown-arrows">{question10 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[10] ? "▲" : "▼"}</span>
         </h3>
-        {question10 && (
+        {openQuestion[10] && (
           <div className="answer">
             <p>
               Vous pouvez percevoir l’indemnité pendant une durée maximale de
@@ -296,14 +288,14 @@ export default function WorkAccident() {
       {/* 11th question */}
       <div className="section">
         <h3
-          className={`question ${question11 ? "open" : ""}`}
-          onClick={() => setQuestion11(!question11)}
+          className={`question ${openQuestion[11] ? "open" : ""}`}
+          onClick={() => toggleQuestion(11)}
         >
           Si je reprends le travail progressivement pour améliorer mon état de
           santé, est-ce que je peux continuer à percevoir une indemnité ?
-          <span className="dropdown-arrows">{question11 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[11] ? "▲" : "▼"}</span>
         </h3>
-        {question11 && (
+        {openQuestion[11] && (
           <div className="answer">
             <p>
               Oui. Si la reprise du travail favorise l’amélioration de votre
@@ -321,14 +313,14 @@ export default function WorkAccident() {
       {/* 12th question */}
       <div className="section">
         <h3
-          className={`question ${question12 ? "open" : ""}`}
-          onClick={() => setQuestion12(!question12)}
+          className={`question ${openQuestion[12] ? "open" : ""}`}
+          onClick={() => toggleQuestion(12)}
         >
           Dois-je déclarer ma maladie à la sécurité sociale pour bénéficier de
           l’indemnité journalière ?
-          <span className="dropdown-arrows">{question12 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[12] ? "▲" : "▼"}</span>
         </h3>
-        {question12 && (
+        {openQuestion[12] && (
           <div className="answer">
             <p>
               Oui. Vous devez déclarer votre maladie dans le délai prévu par la
@@ -342,14 +334,14 @@ export default function WorkAccident() {
       {/* 13th question */}
       <div className="section">
         <h3
-          className={`question ${question13 ? "open" : ""}`}
-          onClick={() => setQuestion13(!question13)}
+          className={`question ${openQuestion[13] ? "open" : ""}`}
+          onClick={() =>toggleQuestion(13)}
         >
           Si mon arrêt maladie dure longtemps, est-ce que je dois me soumettre à
           des contrôles médicaux ?
-          <span className="dropdown-arrows">{question13 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[13] ? "▲" : "▼"}</span>
         </h3>
-        {question13 && (
+        {openQuestion[13] && (
           <div className="answer">
             <p>
               Oui. Si votre maladie dure longtemps ou nécessite des soins
@@ -369,14 +361,14 @@ export default function WorkAccident() {
       {/* 14th question */}
       <div className="section">
         <h3
-          className={`question ${question14 ? "open" : ""}`}
-          onClick={() => setQuestion14(!question14)}
+          className={`question ${openQuestion[14] ? "open" : ""}`}
+          onClick={() => toggleQuestion(14)}
         >
           Comment savoir si ma maladie est considérée comme une maladie de
           longue durée ?
-          <span className="dropdown-arrows">{question14 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[14] ? "▲" : "▼"}</span>
         </h3>
-        {question14 && (
+        {openQuestion[14] && (
           <div className="answer">
             <p>
               Vous devez vous référer à la liste officielle des affections de
@@ -389,14 +381,14 @@ export default function WorkAccident() {
       {/* 15th question */}
       <div className="section">
         <h3
-          className={`question ${question15 ? "open" : ""}`}
-          onClick={() => setQuestion15(!question15)}
+          className={`question ${openQuestion[15] ? "open" : ""}`}
+          onClick={() => toggleQuestion(15)}
         >
           Si mon salaire évolue, est-ce que mon indemnité journalière peut être
           revalorisée ?
-          <span className="dropdown-arrows">{question15 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[15] ? "▲" : "▼"}</span>
         </h3>
-        {question15 && (
+        {openQuestion[15] && (
           <div className="answer">
             <p>
               Oui. Votre indemnité journalière peut être revalorisée en fonction
@@ -409,14 +401,14 @@ export default function WorkAccident() {
       {/* 16th question */}
       <div className="section">
         <h3
-          className={`question ${question16 ? "open" : ""}`}
-          onClick={() => setQuestion16(!question16)}
+          className={`question ${openQuestion[16] ? "open" : ""}`}
+          onClick={() => toggleQuestion(16)}
         >
           Existe-t-il un montant minimum pour l’indemnité journalière lorsque je
           reçois 100 % ?
-          <span className="dropdown-arrows">{question16 ? "▲" : "▼"}</span>
+          <span className="dropdown-arrows">{openQuestion[16] ? "▲" : "▼"}</span>
         </h3>
-        {question16 && (
+        {openQuestion[16] && (
           <div className="answer">
             <p>
               Oui. Lorsque l’indemnité est versée au taux de 100 %, son montant

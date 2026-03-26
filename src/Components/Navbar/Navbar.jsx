@@ -5,7 +5,7 @@ import CNASlogo from "../../assets/CNAS_logo.png";
 import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
-    <header>
+    <header id="navbarPosition">
       <nav id="navbar">
         <div id="navbarLogo" aria-label="Navigation principale">
           <Link to="/">
